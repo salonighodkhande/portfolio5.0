@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laser Cutting 7-Day Learning Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-bg: #121212;
+      --dark-text: #E0E0E0;
+      --light-bg: #FFFFFF;
+      --light-text: #111111;
+      --card-dark: #1C1C1C;
+      --card-light: #F5F5F5;
+      --accent: #FF91C9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--dark-bg);
+      color: var(--dark-text);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body.light-mode {
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: var(--card-dark);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body.light-mode header {
+      background: var(--card-light);
+      color: var(--light-text);
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #6EC1FF, #A87CFF, #FF91C9);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .doc-card {
+      background: var(--card-dark);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: background 0.5s, color 0.5s;
+      border-left: 5px solid var(--accent);
+    }
+
+    body.light-mode .doc-card {
+      background: var(--card-light);
+      color: var(--light-text);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .doc-card h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .doc-card p, .doc-card ul {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .doc-card ul {
+      padding-left: 20px;
+    }
+
+    .doc-photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .doc-photo {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 2px solid var(--accent);
+    }
+
+    footer {
+      background: var(--card-dark);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 2px solid var(--accent);
+    }
+
+    body.light-mode footer {
+      background: var(--card-light);
+      color: var(--light-text);
+      border-top: 2px solid #A87CFF;
+    }
+  </style>
+</head>
+<body>
+ <header>
+  <div class="logo"><h2>Module 5 - Laser Cutting</h2></div>
+  <nav>
+     <a href="index.html" >Home</a>
+    <button class="plain-button" onclick="toggleMode()">Dark/Light</button>
+  </nav>
+</header>
+
+  <main>
+    <!-- Day 1 -->
+    <div class="doc-card">
+      <h2>Day 1 – Introduction & Applications</h2>
+      <p><strong>Objective:</strong> Understand the fundamentals of laser cutting, types of lasers, common applications, and safety basics.</p>
+      <p><strong>Details:</strong> Laser cutting is a technology that uses a laser to cut materials precisely. Key laser types include CO2 lasers (for wood, acrylic), Fiber lasers (metal), and Diode lasers (small-scale cutting). Applications include decorative items, signage, prototypes, and educational models. Safety is paramount: always wear protective glasses and ensure proper ventilation.</p>
+      <p><strong>Activity:</strong> List 5 items that can be made using laser cutting.</p>
+      <div class="doc-photo-grid">
+       
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="doc-card">
+      <h2>Day 2 – Hardware & Software</h2>
+      <p><strong>Objective:</strong> Learn about laser cutter components and design software.</p>
+      <p><strong>Details:</strong> Important parts include the laser tube, bed, mirrors, exhaust, and control panel. Software like LaserCad allows you to design shapes and send jobs to the machine. Understand the difference between Vector cutting (cut outlines) and Raster engraving (fills) and file formats like .svg and .dxf.</p>
+      <p><strong>Activity:</strong> Design a simple shape using the software.</p>
+      <div class="doc-photo-grid">
+        
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="doc-card">
+      <h2>Day 3 – Design Basics</h2>
+      <p><strong>Objective:</strong> Learn how to prepare designs for cutting and engraving.</p>
+      <p><strong>Details:</strong> Decide whether the job is cut or engrave. Use press-fit design tips for assembling multiple pieces. Maintain appropriate kerf and spacing to ensure accurate fitting. Understanding vector paths and proper file setup is essential for precision.</p>
+      <p><strong>Activity:</strong> Design a small box with engraving on top.</p>
+      <div class="doc-photo-grid">
+        <img src="/img/laser4.jpg" alt="Box Design Example" class="doc-photo">
+    
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="doc-card">
+      <h2>Day 4 – Materials & Settings</h2>
+      <p><strong>Objective:</strong> Understand material types and machine power/speed settings.</p>
+      <p><strong>Details:</strong> Materials include wood, acrylic (transparent, colored), paper, cardboard, and more. Proper power and speed settings ensure clean cuts without burning or charring. Conduct test cuts to determine optimal parameters for each material.</p>
+      <p><strong>Activity:</strong> Run a speed/power test grid on cardboard to find optimal settings.</p>
+      <div class="doc-photo-grid">
+        
+        
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="doc-card">
+      <h2>Day 5 – Operating the Laser</h2>
+      <p><strong>Objective:</strong> Learn operational skills to safely run a laser cutting job.</p>
+      <p><strong>Details:</strong> Focus the laser correctly, set the bed height, check air assist and exhaust. Ensure the file is correctly loaded and the machine is ready. Perform safety checks including emergency stop awareness before starting the job.</p>
+      <p><strong>Activity:</strong> Cut your first real design.</p>
+      <div class="doc-photo-grid">
+        <img src="/img/laser machine.jpg" alt="Laser Materials" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="doc-card">
+      <h2>Day 6 – Project Day</h2>
+      <p><strong>Objective:</strong> Apply skills to create a functional project.</p>
+      <p><strong>Details:</strong> Prepare files, use nesting to optimize material usage, assemble parts after cutting. Students choose a project like a stand, box, or 3D design. Emphasis on precision, alignment, and finishing.</p>
+      <p><strong>Activity:</strong> Complete and document your project.</p>
+      <div class="doc-photo-grid">
+        <img src="img/carlaser.jpg" alt="Project Preparation" class="doc-photo">
+        
+        <img src="/img/car3laser.jpg" alt="Project Assembly" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="doc-card">
+      <h2>Day 7 – Review & Maintenance</h2>
+      <p><strong>Objective:</strong> Learn maintenance, troubleshoot common issues, and present projects.</p>
+      <p><strong>Details:</strong> Common issues include burn marks or incomplete cuts. Perform basic maintenance such as cleaning lenses, mirrors, and the bed. Showcase and reflect on projects to reinforce learning.</p>
+      <p><strong>Activity:</strong> Present final work and reflect on learning experience.</p>
+      <div class="doc-photo-grid">
+        
+      </div>
+    </div>
+
+    <!-- Mentor -->
+    <div class="doc-card">
+      <h2>Mentor</h2>
+      <p><strong>Vansh Jaiswal </strong></p>
+      <p>Guided the students through all 7 days, ensured safety protocols, provided hands-on assistance with laser cutting operations, and offered feedback on project design and assembly.</p>
+    </div>
+  
+    
+  </main>
+
+  <footer>
+    &copy; 2025 MyPortfolio. All rights reserved. | Follow me on 
+    <a href="#">Instagram</a>, 
+    <a href="#">LinkedIn</a>, 
+    <a href="#">GitHub</a>
+  </footer>
+
+  <script>
+    // Light/Dark Mode Toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
+    });
+
+    window.addEventListener("load", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") document.body.classList.add("light-mode");
+    });
+  </script>
+</body>
+</html>
+

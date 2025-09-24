@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java OOPs 7-Day Learning Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-bg: #121212;
+      --dark-text: #E0E0E0;
+      --light-bg: #FFFFFF;
+      --light-text: #111111;
+      --card-dark: #1C1C1C;
+      --card-light: #F5F5F5;
+      --accent: #FF91C9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--dark-bg);
+      color: var(--dark-text);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body.light-mode {
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: var(--card-dark);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body.light-mode header {
+      background: var(--card-light);
+      color: var(--light-text);
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #6EC1FF, #A87CFF, #FF91C9);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .doc-card {
+      background: var(--card-dark);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: background 0.5s, color 0.5s;
+      border-left: 5px solid var(--accent);
+    }
+
+    body.light-mode .doc-card {
+      background: var(--card-light);
+      color: var(--light-text);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .doc-card h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .doc-card p, .doc-card ul, .doc-card pre {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .doc-card ul {
+      padding-left: 20px;
+    }
+
+    .doc-card pre {
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+    }
+
+    body.light-mode .doc-card pre {
+      background: #eaeaea;
+      color: #111;
+    }
+
+    .doc-photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .doc-photo {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 2px solid var(--accent);
+    }
+
+    footer {
+      background: var(--card-dark);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 2px solid var(--accent);
+    }
+
+    body.light-mode footer {
+      background: var(--card-light);
+      color: var(--light-text);
+      border-top: 2px solid #A87CFF;
+    }
+  </style>
+</head>
+<body>
+ <header>
+  <div class="logo"><h2>Module 6 - Java</h2></div>
+  <nav>
+     <a href="index.html" >Home</a>
+    <button class="plain-button" onclick="toggleMode()">Dark/Light</button>
+  </nav>
+</header>
+
+  <main>
+    <!-- Day 1 -->
+    <div class="doc-card">
+      <h2>Day 1 – Programming Fundamentals</h2>
+      <p><strong>Objective:</strong> Understand basic Java programming concepts including variables, operators, loops, and conditionals.</p>
+      <p><strong>Details:</strong> On Day 1, I focused on writing small programs that perform calculations, loops, and condition checking. Learned how to declare variables, use operators (+, -, *, /, %), implement for-loops, while-loops, if-else statements, and switch cases. Practiced problem-solving with factorial, prime number checks, and Fibonacci sequences.</p>
+      <pre>
+// Day1Basics.java
+public class Day1Basics {
+    static int factorial(int n) {
+        int result = 1;
+        for(int i = 2; i <= n; i++) result *= i;
+        return result;
+    }
+
+    static boolean isPrime(int n) {
+        if(n <= 1) return false;
+        for(int i = 2; i * i <= n; i++) if(n % i == 0) return false;
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int a = 10, b = 3;
+        System.out.println("a + b = " + (a + b));
+        System.out.println("Factorial of 5 = " + factorial(5));
+        System.out.println("Is 13 prime? " + isPrime(13));
+    }
+}
+      </pre>
+      <div class="doc-photo-grid">
+        <img src="/img/java3.jpg" alt="Java Variables Example" class="doc-photo">
+        <img src="/img/java2.png" alt="Loops Example" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="doc-card">
+      <h2>Day 2 – Functions & Recursion</h2>
+      <p><strong>Objective:</strong> Learn how to structure code with functions and use recursion for problem-solving.</p>
+      <p><strong>Details:</strong> Explored modular programming by writing reusable methods. Implemented recursion to calculate factorial and Fibonacci sequences. Learned how recursion allows a function to call itself and how base conditions prevent infinite loops.</p>
+      <pre>
+// Day2Functions.java
+public class Day2Functions {
+    static int factorialRec(int n) {
+        if(n <= 1) return 1;
+        return n * factorialRec(n - 1);
+    }
+
+    static int fibRec(int n) {
+        if(n <= 1) return n;
+        return fibRec(n - 1) + fibRec(n - 2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Factorial(5) = " + factorialRec(5));
+        System.out.println("Fibonacci(6) = " + fibRec(6));
+    }
+}
+      </pre>
+      <div class="doc-photo-grid">
+        <img src="/img/recursion-java.png" alt="Recursion Example" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="doc-card">
+      <h2>Day 3 – Classes & Objects</h2>
+      <p><strong>Objective:</strong> Learn the concept of classes, objects, constructors, and methods in Java.</p>
+      <p><strong>Details:</strong> Designed a Car class with attributes (brand, model, year, mileage) and methods (drive, display). Learned how to create objects, initialize them using constructors, and call object methods.</p>
+      <pre>
+// Car.java
+class Car {
+    String brand, model;
+    int year, mileage;
+
+    Car(String brand, String model, int year, int mileage) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.mileage = mileage;
+    }
+
+    void drive(int km) {
+        mileage += km;
+        System.out.println("Driven " + km + " km. Mileage: " + mileage);
+    }
+
+    void display() {
+        System.out.println(brand + " " + model + " (" + year + ") - " + mileage + " km");
+    }
+}
+
+public class Day3CarDemo {
+    public static void main(String[] args) {
+        Car c1 = new Car("Toyota", "Yaris", 2020, 0);
+        c1.display();
+        c1.drive(120);
+    }
+}
+      </pre>
+      <div class="doc-photo-grid">
+        <img src="/img/java1.png" alt="Car Class Example" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="doc-card">
+      <h2>Day 4 – Encapsulation & Abstraction</h2>
+      <p><strong>Objective:</strong> Learn how to hide data and provide controlled access via getters and setters.</p>
+      <p><strong>Details:</strong> Created a BankAccount class with private fields (accountNumber, owner, balance). Used public getters and setters to manage balance safely. Learned the importance of data hiding to maintain integrity and security of class data.</p>
+      <pre>
+// BankAccount.java
+class BankAccount {
+    private String accountNumber;
+    private String owner;
+    private double balance;
+
+    BankAccount(String accountNumber, String owner, double balance) {
+        this.accountNumber = accountNumber;
+        this.owner = owner;
+        this.balance = balance;
+    }
+
+    public double getBalance() { return balance; }
+
+    public void deposit(double amount) {
+        if(amount > 0) balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if(amount > 0 && amount <= balance) balance -= amount;
+        else System.out.println("Insufficient funds!");
+    }
+
+    public void display() {
+        System.out.println("Account: " + accountNumber + ", Owner: " + owner + ", Balance: " + balance);
+    }
+}
+
+public class Day4BankDemo {
+    public static void main(String[] args) {
+        BankAccount acct = new BankAccount("AC123", "Anshuman", 500);
+        acct.display();
+        acct.deposit(250);
+        acct.withdraw(200);
+        acct.display();
+    }
+}
+      </pre>
+      <div class="doc-photo-grid">
+        <img src="/img/encapsulation.png" alt="Encapsulation Example" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="doc-card">
+      <h2>Day 5 – Inheritance</h2>
+      <p><strong>Objective:</strong> Learn how classes can inherit properties and methods for code reusability.</p>
+      <p><strong>Details:</strong> Created a Person class and extended it with Student class. Learned `super` keyword, method overriding, and hierarchical relationships.</p>
+      <pre>
+// Person.java & Student.java
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+class Student extends Person {
+    String rollNo, course;
+
+    Student(String name, int age, String rollNo, String course) {
+        super(name, age);
+        this.rollNo = rollNo;
+        this.course = course;
+    }
+
+    @Override
+    void display() {
+        super.display();
+        System.out.println("Roll No: " + rollNo + ", Course: " + course);
+    }
+}
+
+public class Day5InheritanceDemo {
+    public static void main(String[] args) {
+        Student s = new Student("Tanu", 20, "IT40", "B.E. IT");
+        s.display();
+    }
+}
+      </pre>
+      <div class="doc-photo-grid">
+        <img src="/img/inheritance-java.png" alt="Inheritance Example" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="doc-card">
+      <h2>Day 6 – Polymorphism</h2>
+      <p><strong>Objective:</strong> Learn method overriding and runtime polymorphism using abstract classes.</p>
+      <p><strong>Details:</strong> Created an abstract Shape class and extended it with Circle and Rectangle. Implemented `area()` method differently for each subclass. Learned how polymorphism allows objects to behave differently depending on their actual type.</p>
+      <pre>
+// Shape.java, Circle.java, Rectangle.java
+abstract class Shape {
+    abstract double area();
+}
+
+class Circle extends Shape {
+    double radius;
+    Circle(double radius) { this.radius = radius; }
+
+    @Override
+    double area() { return Math.PI * radius * radius; }
+}
+
+class Rectangle extends Shape {
+    double w, h;
+    Rectangle(double w, double h) { this.w = w; this.h = h; }
+
+    @Override
+    double area() { return w * h; }
+}
+
+public class Day6PolymorphismDemo {
+    public static void main(String[] args) {
+        Shape s1 = new Circle(5);
+        Shape s2 = new Rectangle(4, 6);
+
+        System.out.println("Circle area = " + s1.area());
+        System.out.println("Rectangle area = " + s2.area());
+    }
+}
+      </pre>
+      <div class="doc-photo-grid">
+        <img src="/img/java-polymorphism.png" alt="Polymorphism Example" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="doc-card">
+      <h2>Day 7 – Mini Project (Library Management System)</h2>
+      <p><strong>Objective:</strong> Apply OOP concepts to create a mini project integrating all learned concepts.</p>
+      <p><strong>Details:</strong> Created classes for Book, Member, and Library. Applied encapsulation, inheritance, and polymorphism. Practiced adding books, displaying member details, and managing library records in a modular way.</p>
+      <pre>
+// Book.java
+class Book {
+    String title, author, isbn;
+
+    Book(String title, String author, String isbn) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+    }
+
+    void display() {
+        System.out.println("Book: " + title + " by " + author + " [ISBN: " + isbn + "]");
+    }
+}
+
+// Member.java
+class Member {
+    String name;
+    int memberId;
+
+    Member(String name, int memberId) {
+        this.name = name;
+        this.memberId = memberId;
+    }
+
+    void display() {
+        System.out.println("Member: " + name + " (ID: " + memberId + ")");
+    }
+}
+
+// Library.java
+class Library {
+    Book[] books;
+    int count;
+
+    Library(int size) {
+        books = new Book[size];
+        count = 0;
+    }
+
+    void addBook(Book b) {
+        if(count < books.length) {
+            books[count++] = b;
+            System.out.println("Book added: " + b.title);
+        } else {
+            System.out.println("Library is full!");
+        }
+    }
+
+    void showBooks() {
+        System.out.println("--- Library Books ---");
+        for(int i=0;i<count;i++) books[i].display();
+    }
+}
+
+public class Day7LibraryDemo {
+    public static void main(String[] args) {
+        Library lib = new Library(5);
+        Book b1 = new Book("OOP in Java", "James Gosling", "111");
+        Book b2 = new Book("Clean Code", "Robert Martin", "222");
+        Member m1 = new Member("Anshuman", 101);
+
+        lib.addBook(b1);
+        lib.addBook(b2);
+
+        m1.display();
+        lib.showBooks();
+    }
+}
+      </pre>
+      <div class="doc-photo-grid">
+      
+      </div>
+    </div>
+   
+    <!-- Mentor -->
+    <div class="doc-card">
+      <h2>Mentor</h2>
+      <ul>
+        <li>Atharv Pathak</li>
+        <p>Guided the students through all 7 days, provided hands-on, and offered feedback on project and assembly.</p>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 MyPortfolio. All rights reserved. | Follow me on 
+    <a href="#">Instagram</a>, 
+    <a href="#">LinkedIn</a>, 
+    <a href="#">GitHub</a>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
+    });
+
+    window.addEventListener("load", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if(savedTheme === "light") document.body.classList.add("light-mode");
+    });
+  </script>
+</body>
+</html>
+

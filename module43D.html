@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Printing 7-Day Learning Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-bg: #121212;
+      --dark-text: #E0E0E0;
+      --light-bg: #FFFFFF;
+      --light-text: #111111;
+      --card-dark: #1C1C1C;
+      --card-light: #F5F5F5;
+      --accent: #FF91C9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--dark-bg);
+      color: var(--dark-text);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body.light-mode {
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: var(--card-dark);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body.light-mode header {
+      background: var(--card-light);
+      color: var(--light-text);
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #6EC1FF, #A87CFF, #FF91C9);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .doc-card {
+      background: var(--card-dark);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: background 0.5s, color 0.5s;
+      border-left: 5px solid var(--accent);
+    }
+
+    body.light-mode .doc-card {
+      background: var(--card-light);
+      color: var(--light-text);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .doc-card h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .doc-card p, .doc-card ul {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .doc-card ul {
+      padding-left: 20px;
+    }
+
+    .doc-photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .doc-photo {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 2px solid var(--accent);
+    }
+
+    footer {
+      background: var(--card-dark);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 2px solid var(--accent);
+    }
+
+    body.light-mode footer {
+      background: var(--card-light);
+      color: var(--light-text);
+      border-top: 2px solid #A87CFF;
+    }
+  </style>
+</head>
+<body>
+ <header>
+  <div class="logo"><h2>Module 4 - 3D Printing</h2></div>
+  <nav>
+     <a href="index.html" >Home</a>
+    <button class="plain-button" onclick="toggleMode()">Dark/Light</button>
+  </nav>
+</header>
+
+  <main>
+    <!-- Day 1 -->
+    <div class="doc-card">
+      <h2>Day 1: Basics of 3D Printing</h2>
+      <p><strong>Objective:</strong> Learn what 3D printing is, understand its types, and study printer components.</p>
+      <p><strong>Details:</strong>  
+        3D printing, also known as <em>additive manufacturing</em>, builds objects layer by layer using digital files. The most common beginner-friendly type is <strong>FDM (Fused Deposition Modeling)</strong>.  
+        Key printer parts include:  
+      </p>
+      <ul>
+        <li><strong>Frame:</strong> Provides stability and structure.</li>
+        <li><strong>Print Bed:</strong> Surface where objects are built.</li>
+        <li><strong>Extruder & Nozzle:</strong> Melt and deposit filament.</li>
+        <li><strong>Filament:</strong> Printing material (like PLA).</li>
+        <li><strong>Stepper Motors:</strong> Control precise movements.</li>
+        <li><strong>Control Board:</strong> Acts as the brain of the printer.</li>
+      </ul>
+      <p><strong>Activities:</strong> Watched demo videos of FDM printers, explored how digital designs transform into physical objects.</p>
+      <div class="doc-photo-grid">
+        <img src="/img/3d-machine2.jpg" alt="3D Printer Setup" class="doc-photo">
+    
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="doc-card">
+      <h2>Day 2: Materials & Safety</h2>
+      <p><strong>Objective:</strong> Learn about filaments, bed adhesion, and essential safety rules.</p>
+      <p><strong>Details:</strong>  
+        Different filaments are used depending on strength, flexibility, and durability:  
+      </p>
+      <ul>
+        <li><strong>PLA:</strong> Easy to use, eco-friendly, good for beginners.</li>
+        <li><strong>ABS:</strong> Strong but needs ventilation (fumes).</li>
+        <li><strong>PETG:</strong> Balance of strength and flexibility.</li>
+        <li><strong>TPU:</strong> Flexible, rubber-like material.</li>
+      </ul>
+      <p><strong>Bed Adhesion:</strong> Methods include tape, glue sticks, build plates, and heated beds to prevent prints from warping.  
+      <br><strong>Safety:</strong> Always handle hot nozzles carefully, ensure good ventilation, and avoid touching moving parts.</p>
+      <div class="doc-photo-grid">
+       <img src="/img/materials-3d.webp" alt="CAD Design" class="doc-photo">
+       
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="doc-card">
+      <h2>Day 3: Introduction to CAD & STL Files</h2>
+      <p><strong>Objective:</strong> Learn to design 3D models and understand STL files.</p>
+      <p><strong>Details:</strong>  
+        3D models are created using <strong>CAD software</strong> like TinkerCAD (beginner-friendly), Fusion360, or Blender.  
+        The designs are exported as <strong>STL files</strong>, which store the 3D surface geometry of an object. These files are universal for most 3D printers.  
+        Beginners can also download free models from sites like <em>Thingiverse</em> or <em>Printables</em> to practice.  
+      </p>
+      <p><strong>Activities:</strong> Designed a simple keychain in TinkerCAD, explored STL file structure, and downloaded sample models.</p>
+      <div class="doc-photo-grid">
+        <img src="/img/3d-filing.jpg" alt="CAD Design" class="doc-photo">
+        
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="doc-card">
+      <h2>Day 4: Slicing Software</h2>
+      <p><strong>Objective:</strong> Understand slicing and prepare STL files for printing.</p>
+      <p><strong>Details:</strong>  
+        A <strong>slicer</strong> converts STL files into <em>G-code</em>, which contains printer instructions.  
+        Popular slicers include <strong>Cura</strong> and <strong>PrusaSlicer</strong>.  
+        Key settings include:  
+      </p>
+      <ul>
+        <li><strong>Layer Height:</strong> Affects resolution and print time.</li>
+        <li><strong>Infill %:</strong> Determines strength and weight of the print.</li>
+        <li><strong>Supports:</strong> Temporary structures for overhangs.</li>
+        <li><strong>Print Speed & Temperature:</strong> Must be optimized per material.</li>
+      </ul>
+      <p><strong>Activities:</strong> Practiced slicing a model, previewed toolpaths, and adjusted infill density for testing.</p>
+      <div class="doc-photo-grid">
+        <img src="/img/slicing.png" alt="Different Filaments" class="doc-photo">
+        <img src="/img/preview-3d.png" alt="G-code Toolpath Preview" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="doc-card">
+      <h2>Day 5: First Print & Calibration</h2>
+      <p><strong>Objective:</strong> Calibrate the printer and execute the first test print.</p>
+      <p><strong>Details:</strong>  
+        Calibration includes <strong>bed leveling</strong> and adjusting nozzle height.  
+        A well-leveled bed ensures proper adhesion of the first layer.  
+        Test prints like <em>calibration cubes</em> or <em>Benchy boats</em> are commonly used.  
+        Issues like stringing, under-extrusion, or warping can be identified during the first test.  
+      </p>
+      <p><strong>Activities:</strong> Calibrated the printer manually, ran a Benchy test print, and monitored first-layer adhesion.</p>
+      <div class="doc-photo-grid">
+        <img src="/img/3d-m3.jpg" alt="Troubleshooting Print" class="doc-photo">
+        <img src="/img/machine-3d.jpg" alt="Improved Print Quality" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="doc-card">
+      <h2>Day 6: Troubleshooting & Print Quality</h2>
+      <p><strong>Objective:</strong> Identify problems and improve print quality.</p>
+      <p><strong>Details:</strong>  
+        Common issues include:  
+      </p>
+      <ul>
+        <li><strong>Bed Adhesion Issues:</strong> Fix by re-leveling or adjusting bed temperature.</li>
+        <li><strong>Stringing:</strong> Reduce by lowering temperature and enabling retraction.</li>
+        <li><strong>Layer Shifting:</strong> Caused by loose belts or unstable bed.</li>
+      </ul>
+      <p><strong>Activities:</strong> Experimented with slicer settings, tested prints at different speeds and infill, compared results.</p>
+      <div class="doc-photo-grid">
+        
+        <video controls width="100%" style="border-radius:10px; margin-top:10px;">
+    <source src="/img/project-3d.mp4" type="video/mp4">
+  </video>
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="doc-card">
+      <h2>Day 7: Post-processing & Advanced Learning</h2>
+      <p><strong>Objective:</strong> Learn finishing techniques and explore advanced 3D printing.</p>
+      <p><strong>Details:</strong>  
+        Post-processing includes:  
+      </p>
+      <ul>
+        <li><strong>Sanding:</strong> Smoothens surface.</li>
+        <li><strong>Painting:</strong> Adds aesthetics.</li>
+        <li><strong>Acetone Smoothing:</strong> Works for ABS prints.</li>
+      </ul>
+      <p><strong>Advanced Filaments:</strong> Wood-fill, carbon-fiber, and TPU expand possibilities. Multi-material and resin (SLA/DLP) printers provide higher detail and flexibility.</p>
+      <p><strong>Activities:</strong> Printed a custom phone stand, applied sanding and painting, explored advanced materials.</p>
+      <div class="doc-photo-grid">
+        <img src="/img/final-coin-3d.jpg" alt="Post Processing" class="doc-photo">
+  
+      </div>
+    </div>
+
+    <!-- Outcomes -->
+    <div class="doc-card">
+      <h2>Learning Outcomes</h2>
+      <ul>
+        <li>Use slicing software independently for any model.</li>
+        <li>Operate advanced 3D printers with touch and remote interfaces.</li>
+        <li>Plan a print from start to finish with minimal supervision.</li>
+        <li>Understand the connection between digital design and physical prototyping.</li>
+      </ul>
+      <p><strong>Mentor:</strong> Rahul Sanjay Choudhary</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 MyPortfolio. All rights reserved. | Follow me on 
+    <a href="#">Instagram</a>, 
+    <a href="#">LinkedIn</a>, 
+    <a href="#">GitHub</a>
+  </footer>
+
+  <script>
+    // Light/Dark Mode Toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      // Save preference
+      localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
+    });
+
+    // On Page Load → Apply Saved Theme
+    window.addEventListener("load", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+      }
+    });
+  </script>
+</body>
+</html>
+
+

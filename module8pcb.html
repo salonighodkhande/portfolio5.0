@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT & PCB Module Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-bg: #121212;
+      --dark-text: #E0E0E0;
+      --light-bg: #FFFFFF;
+      --light-text: #111111;
+      --card-dark: #1C1C1C;
+      --card-light: #F5F5F5;
+      --accent: #FF91C9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--dark-bg);
+      color: var(--dark-text);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body.light-mode {
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: var(--card-dark);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body.light-mode header {
+      background: var(--card-light);
+      color: var(--light-text);
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #6EC1FF, #A87CFF, #FF91C9);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .doc-card {
+      background: var(--card-dark);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: background 0.5s, color 0.5s;
+      border-left: 5px solid var(--accent);
+    }
+
+    body.light-mode .doc-card {
+      background: var(--card-light);
+      color: var(--light-text);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .doc-card h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .doc-card p, .doc-card ul {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .doc-card ul {
+      padding-left: 20px;
+    }
+
+    .doc-photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .doc-photo {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 2px solid var(--accent);
+    }
+
+    footer {
+      background: var(--card-dark);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 2px solid var(--accent);
+    }
+
+    body.light-mode footer {
+      background: var(--card-light);
+      color: var(--light-text);
+      border-top: 2px solid #A87CFF;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo"><h2>Module 8 - IoT and PCB</h2></div>
+  <nav>
+     <a href="index.html" >Home</a>
+    <button class="plain-button" onclick="toggleMode()">Dark/Light</button>
+  </nav>
+</header>
+
+  <main>
+    <!-- Day 1 -->
+    <div class="doc-card">
+      <h2>Day 1 – IoT Module</h2>
+      <p><strong>Objective:</strong> Learn about ESP8266 microcontroller and basic LED control programs.</p>
+      <p><strong>Details:</strong>  
+        Explored ESP8266 pinout, specifications, and its importance in IoT. Installed Arduino IDE, configured it for ESP8266 boards, and installed necessary libraries.  
+        First programs included blinking onboard and external LEDs using GPIO pins. Students learned programming basics and hardware interfacing.
+      </p>
+      <div class="doc-photo-grid">
+        <img src="/img/PCBd1.jpg" alt="ESP8266 Setup" class="doc-photo">
+        <img src="/img/LED_BLINK.jpg" alt="LED Blink Program" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="doc-card">
+      <h2>Day 2 – IoT Module</h2>
+      <p><strong>Objective:</strong> Understand Wi-Fi networking and create a simple web server.</p>
+      <p><strong>Details:</strong>  
+        Learned Wi-Fi concepts (SSID, IP, password) and connection setup in ESP8266. Wrote code to connect ESP8266 to Wi-Fi and verified connection via Serial Monitor.  
+        Built a basic web server to control LEDs through a browser, introducing remote control using IoT.
+      </p>
+      <div class="doc-photo-grid">
+        <img src="/img/RGB_2.jpg" alt="Wi-Fi Setup" class="doc-photo">
+       <img src="/img/PCB_rgb.jpg" alt="Live Sensor Data" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="doc-card">
+      <h2>Day 3 – IoT Module</h2>
+      <p><strong>Objective:</strong> Interface sensors and display real-time data on web pages.</p>
+      <p><strong>Details:</strong>  
+        Reviewed Wi-Fi connection and web server from Day 2. Interfaced an ultrasonic sensor (HC-SR04) with ESP8266.  
+        Programs included real-time distance measurement printed in Serial Monitor and displaying live data on a hosted webpage for monitoring.
+      </p>
+      <div class="doc-photo-grid">
+        <img src="/img/Ultrasonic sensor.jpg" alt="Ultrasonic Sensor" class="doc-photo">
+         <img src="/img/PCBd2.jpg" alt="Web Server Example" class="doc-photo">
+        
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="doc-card">
+      <h2>Day 4 – IoT Module</h2>
+      <p><strong>Objective:</strong> Design mobile app for sensor data monitoring and control.</p>
+      <p><strong>Details:</strong>  
+        Discussed mini-project concept. Installed MIT App Inventor, designed a simple mobile app to display sensor values and control outputs.  
+        Integrated app with ESP8266 for two-way communication. Tested commands and data transfer successfully.
+      </p>
+      <div class="doc-photo-grid">
+        <img src="/img/MIT_iot2.jpg" alt="MIT App Inventor Interface" class="doc-photo">
+        <img src="/img/iotd42.jpg" alt="App Integration with ESP8266" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="doc-card">
+      <h2>Day 5 – PCB Designing Module</h2>
+      <p><strong>Objective:</strong> Learn PCB basics and design AC to DC converter schematic.</p>
+      <p><strong>Details:</strong>  
+        Designed AC to DC converter schematic using transformer, rectifier, capacitor filter, and voltage regulator.  
+        Learned PCB concepts: layers, traces, vias, footprints, and design rules. Discussed real-life applications and best design practices.
+      </p>
+      <div class="doc-photo-grid">
+        <img src="/img/schematic_p1 (1).png" alt="AC to DC Schematic" class="doc-photo">
+        <img src="/img/PCB_converted.jpg" alt="PCB Basics" class="doc-photo">
+        
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="doc-card">
+      <h2>Day 6 – PCB Designing Module</h2>
+      <p><strong>Objective:</strong> Convert schematic to PCB layout and practice component placement.</p>
+      <p><strong>Details:</strong>  
+        Converted AC to DC schematic into PCB layout using design software. Placed components strategically and routed tracks.  
+        Checked for Design Rule Check (DRC) errors and practiced independent layout designing under guidance.
+      </p>
+      <div class="doc-photo-grid">
+        <img src="/img/pcb_front.png" alt="PCB Layout Design" class="doc-photo">
+        <img src="/img/pcb_convertedside.png" alt="PCB Basics" class="doc-photo">
+        <img src="/img/pcb_back.png" alt="Component Routing" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="doc-card">
+      <h2>Day 7 – PCB Designing Module</h2>
+      <p><strong>Objective:</strong> Design DC motor controller schematic and layout.</p>
+      <p><strong>Details:</strong>  
+        Designed DC motor speed controller schematic using MOSFET/transistor and PWM. Converted schematic to PCB layout, routed connections, and ensured design integrity.  
+        Discussed real-world implementation, simulation tips, and cleared design doubts.
+      </p>
+      <div class="doc-photo-grid">
+        <img src="/img/schematic_p2 (2).png" alt="DC Motor Controller" class="doc-photo">
+        <img src="/img/Screenshot 2025-09-24 020920.png" alt="PCB Layout for Motor Controller" class="doc-photo">
+      </div>
+    </div>
+
+    <!-- Mentors -->
+    <div class="doc-card">
+      <h2>Mentors</h2>
+      <ul>
+        <li>Rakesh Lande</li>
+        <li>Rohan Khandar </li>
+        <li>Tejas Tarankar </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 MyPortfolio. All rights reserved. | Follow me on 
+    <a href="#">Instagram</a>, 
+    <a href="#">LinkedIn</a>, 
+    <a href="#">GitHub</a>
+  </footer>
+
+  <script>
+    // Light/Dark Mode Toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
+    });
+
+    window.addEventListener("load", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") document.body.classList.add("light-mode");
+    });
+  </script>
+</body>
+</html>
+
+
+

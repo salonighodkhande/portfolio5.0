@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Networking Module Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #000000;
+    color: #E0E0E0;
+    transition: background 0.5s, color 0.5s;
+  }
+  body.day-mode {
+    background: #FFFFFF;
+    color: #111111;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1C1C1C;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  body.day-mode header { background: #f5f5f5; color: #111; }
+  header .logo { font-size: 1.5em; font-weight: 700; color: #FF8CFF; }
+  header nav a {
+    margin-left: 20px; text-decoration: none; font-weight: 600; color: #fff; transition: color 0.3s;
+  }
+  body.day-mode header nav a { color: #111; }
+  header nav a:hover { color: #FF91C9; }
+
+  /* Title & buttons */
+  h1 { text-align: center; font-size: 3em; font-weight: 700; margin-top: 40px; margin-bottom: 20px; color: #FF8CFF; }
+  .button-group { text-align: center; margin-bottom: 30px; }
+  .mode-toggle, .home-button {
+    display: inline-block; margin: 10px; padding: 10px 25px; font-weight: 700; border: none; border-radius: 25px; cursor: pointer; transition: all 0.3s; text-decoration: none; color: #fff;
+  }
+  .mode-toggle { background: linear-gradient(90deg, #6EC1FF,#A87CFF,#FF91C9); }
+  .mode-toggle:hover { filter: brightness(1.1); }
+  .home-button { background: linear-gradient(90deg, #FF8CFF,#A87CFF,#6EC1FF); }
+  .home-button:hover { filter: brightness(1.1); }
+
+  /* Cards */
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 30px; }
+  .card {
+    background: #1C1C1C;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    transition: background 0.5s, color 0.5s;
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, #6EC1FF, #A87CFF, #FF91C9) 1;
+  }
+  body.day-mode .card { background: #FFFFFF; color: #111111; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+  .card img { width: 100%; border-radius: 12px; margin-bottom: 15px; }
+  .card h2 { 
+    margin-top: 0; 
+    background: linear-gradient(90deg,#6EC1FF,#A87CFF,#FF91C9); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    color: transparent;
+    font-size: 1.8em; 
+    margin-bottom: 15px; 
+  }
+  .card p { margin-bottom: 10px; line-height: 1.6; }
+  .card ul { padding-left: 20px; margin: 0; }
+  .card li { padding: 6px 0; line-height: 1.6; }
+  .highlight { color: #FF91C9; font-weight: 600; }
+  .plain-button {
+  background: none;       /* No background */
+  border: none;           /* No border */
+  color: inherit;         /* Inherit text color */
+  font-weight: 600;       /* Optional: slightly bold */
+  cursor: pointer;        /* Pointer cursor */
+  text-decoration: none;  /* Remove underline for <a> */
+  padding: 0;             /* No padding */
+  font-size: 1rem;        /* Default font size */
+  transition: color 0.3s; /* Smooth color change */
+}
+
+.plain-button:hover {
+  color: #FF91C9; /* Pink on hover */
+}
+
+/* Mentor Card Styling */
+.doc-card ul {
+  list-style-type: disc;       /* Bullet points */
+  padding-left: 25px;          /* Indent for bullets */
+  margin-top: 10px;
+  line-height: 1.6;
+  color: inherit;              /* Matches current text color */
+}
+
+.doc-card ul li {
+  margin-bottom: 8px;          /* Space between mentor names */
+  font-weight: 500;            /* Slightly bolder */
+}
+
+/* Optional: hover effect for mentor names */
+.doc-card ul li:hover {
+  color: var(--accent);        /* Accent color on hover */
+  cursor: default;             /* Non-clickable but indicates focus */
+}
+
+
+
+  /* Footer */
+  footer { background: #1C1C1C; color: #fff; text-align: center; padding: 20px; margin-top: 40px; border-top: 2px solid #FF91C9; }
+  body.day-mode footer { background: #f5f5f5; color: #111; border-top: 2px solid #A87CFF; }
+  footer a { color: #FF91C9; text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .card h2 { font-size: 1.5em; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo"><h2>Module 3 - Networking</h2></div>
+  <nav>
+    <a href="index.html" >Home</a>
+    <button class="plain-button" onclick="toggleMode()">Dark/Light</button>
+  </nav>
+</header>
+
+
+
+<div class="container">
+
+  <!-- Day 1 -->
+  <div class="card">
+    <img src="/img/networkingintro.jpg" alt="Introduction to Networking">
+    <h2>Day 1: Introduction to Networking</h2>
+    <p>The session covered the basics of data communication and networking. Students understood how devices communicate and why networking is crucial.</p>
+    <ul>
+      <li>What is <span class="highlight">Data Communication</span> and <span class="highlight">Networking</span>.</li>
+      <li>Importance of data communication and networking.</li>
+      <li>Components of data communication: sender, receiver, medium, protocols.</li>
+      <li>Characteristics of data communication: speed, accuracy, reliability.</li>
+      <li>Types of communication: simplex, half-duplex, full-duplex.</li>
+      <li>Types of data transmission: analog, digital.</li>
+    </ul>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="card">
+   
+    <h2>Day 2: Network and Data Types</h2>
+    <p>Explored network types, definitions, and data classifications that travel across networks.</p>
+    <ul>
+      <li>Definition of a <span class="highlight">Network</span>.</li>
+      <li>Types of networks: LAN, WAN, MAN, PAN.</li>
+      <li>Networking concepts and their importance.</li>
+      <li>Types of data: oriented, observed, inferred.</li>
+    </ul>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="card">
+   
+    <h2>Day 3: OSI Model</h2>
+    <p>The OSI model explains how data moves through seven layers, with each layer performing specific functions for successful communication.</p>
+    <ul>
+      <li>7 layers of OSI Model: Physical, Data Link, Network, Transport, Session, Presentation, Application.</li>
+      <li>Understanding each layer’s function in networking.</li>
+      <li>Examples of protocols at each layer.</li>
+    </ul>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="card">
+    <h2>Day 4: HTTP Methods & Domain Name System</h2>
+    <p>This session covered HTTP methods for web communication and the DNS system for resolving addresses.</p>
+    <ul>
+      <li>HTTP Methods: GET, POST, PUT, DELETE.</li>
+      <li>Domain Name System (DNS) and its role.</li>
+      <li>How browsers use HTTP and DNS to load web pages.</li>
+    </ul>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="card">
+    
+    <h2>Day 5: Test on OSI Model and DHCP</h2>
+    <p>Students were tested on OSI model concepts and DHCP was introduced for dynamic IP assignment.</p>
+    <ul>
+      <li>Review of OSI Model layers.</li>
+      <li>Introduction to DHCP (Dynamic Host Configuration Protocol).</li>
+      <li>Understanding dynamic IP address assignment.</li>
+    </ul>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="card">
+   
+    <h2>Day 6: DHCP Acknowledge, ARP & ICMP</h2>
+    <p>Covered DHCP acknowledgements, ARP protocol for IP-MAC mapping, and ICMP for diagnostics and error messages.</p>
+    <ul>
+      <li><strong>DHCP Acknowledge:</strong> Server confirms IP assignment.</li>
+      <li><strong>ARP:</strong> Maps IP addresses to MAC addresses.</li>
+      <li><strong>ICMP:</strong> Sends network error messages and diagnostics (e.g., ping).</li>
+    </ul>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="card">
+    <img src="/img/Screenshot 2025-05-04 005826.png" alt="Zynq App Submission">
+    <h2>Day 7: Project Submission</h2>
+    <p>Final submission of the Zynq App project assigned by Mentor Gorav Sir. Feedback was given and networking concepts applied practically.</p>
+    <ul>
+      <li>Submission of Zynq App project.</li>
+      <li>Mentor review and feedback.</li>
+      <li>Application of networking concepts in the project.</li>
+    </ul>
+  </div>
+
+  <div class="doc-card">
+      <h2>Mentor</h2>
+      <ul>
+        <li>Gorav Sharma</li>
+        
+      </ul>
+    </div>
+</div>
+
+
+  
+     <!-- Mentors -->
+    
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 MyPortfolio. All rights reserved. | Follow me on 
+  <a href="#">Instagram</a>, 
+  <a href="#">LinkedIn</a>, 
+  <a href="#">GitHub</a>
+</footer>
+
+<script>
+  // Persistent dark/light mode
+  document.addEventListener('DOMContentLoaded', () => {
+    if(localStorage.getItem('mode') === 'day'){
+      document.body.classList.add('day-mode');
+    }
+  });
+
+  function toggleMode() {
+    document.body.classList.toggle('day-mode');
+    if(document.body.classList.contains('day-mode')){
+      localStorage.setItem('mode', 'day');
+    } else {
+      localStorage.setItem('mode', 'night');
+    }
+  }
+</script>
+
+</body>
+</html>
+

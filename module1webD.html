@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development Module Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #000000;
+    color: #E0E0E0;
+    transition: background 0.5s, color 0.5s;
+  }
+  body.day-mode {
+    background: #FFFFFF;
+    color: #111111;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1C1C1C;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  body.day-mode header { background: #f5f5f5; color: #111; }
+  header .logo { font-size: 1.5em; font-weight: 700; color: #FF8CFF; }
+  header nav a, header nav button { margin-left: 20px; text-decoration: none; font-weight: 600; color: #fff; transition: color 0.3s; cursor: pointer; }
+  body.day-mode header nav a, body.day-mode header nav button { color: #111; }
+  header nav a:hover, header nav button:hover { color: #FF91C9; }
+
+  /* Page title & buttons */
+  h1 { text-align: center; font-size: 3em; font-weight: 700; margin-top: 40px; margin-bottom: 30px; color: #FF8CFF; }
+
+  .mode-toggle, .home-button {
+    display: inline-block; margin: 10px; padding: 10px 25px; font-weight: 700; border: none; border-radius: 25px; transition: all 0.3s;
+  }
+  .mode-toggle { background: linear-gradient(90deg, #6EC1FF,#A87CFF,#FF91C9); color:#fff; }
+  .home-button { background: linear-gradient(90deg, #FF8CFF,#A87CFF,#6EC1FF); color:#fff; }
+
+
+  .plain-button {
+  background: none;       /* No background */
+  border: none;           /* No border */
+  color: inherit;         /* Inherit text color */
+  font-weight: 600;       /* Optional: slightly bold */
+  cursor: pointer;        /* Pointer cursor */
+  text-decoration: none;  /* Remove underline for <a> */
+  padding: 0;             /* No padding */
+  font-size: 1rem;        /* Default font size */
+  transition: color 0.3s; /* Smooth color change */
+}
+
+.plain-button:hover {
+  color: #FF91C9; /* Pink on hover */
+}
+
+  /* Container */
+  .container { max-width: 1000px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 50px; }
+
+  /* Day row: image left, text right */
+  .day-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .card-img {
+    flex: 1 1 45%;
+  }
+  .card-img img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .card-text {
+    flex: 1 1 45%;
+    background: #1C1C1C;
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, #42A5F5, #7E57C2, #EC407A) 1;
+    border-radius: 10px;
+    padding: 20px;
+    color: #E0E0E0;
+    transition: background 0.5s, color 0.5s;
+  }
+  body.day-mode .card-text {
+    background: #FFFFFF;
+    color: #111111;
+    border-image: linear-gradient(180deg, #42A5F5, #7E57C2, #EC407A) 1;
+  }
+  .card-text h2 { margin-top: 0; color: #A87CFF; font-size: 1.5em; }
+  .card-text ul { padding-left: 20px; margin: 0; }
+  .card-text li { padding: 6px 0; line-height: 1.6; }
+  .highlight { color: #FF91C9; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .day-row { flex-direction: column; }
+    .card-img, .card-text { flex: 1 1 100%; }
+  }
+
+  /* Footer */
+  footer { background: #1C1C1C; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+  body.day-mode footer { background: #f5f5f5; color: #111; }
+  footer a { color: #FF91C9; text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+
+.doc-card h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .doc-card p, .doc-card ul, .doc-card pre {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .doc-card ul {
+      padding-left: 20px;
+    }
+
+    .doc-card pre {
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+    }
+
+    /* Mentor Section */
+.mentor-section {
+    background: #1C1C1C;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+body.day-mode .mentor-section { background: #fff; color: #111; }
+.mentor-section h2 { color: #FF8CFF; margin-bottom: 15px; }
+.mentor-list { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+.mentor-card {
+    background: #2C2C2C;
+    padding: 15px 20px;
+    border-radius: 10px;
+    min-width: 180px;
+}
+body.day-mode .mentor-card { background: #f0f0f0; color: #111; }
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo"><h2>Module1 - Web Development</h2></div>
+  <nav>
+     <a href="index.html" >Home</a>
+    <button class="plain-button" onclick="toggleMode()">Dark/Light</button>
+
+  </nav>
+</header>
+
+
+
+<div class="container">
+
+  <!-- Day 1 -->
+  <div class="day-row">
+    <div class="card-img"><img src="/img/wd1.png" alt="HTML Basics"></div>
+    <div class="card-text">
+      <h2>Day 1: HTML Basics</h2>
+      <ul>
+        <li>Understanding the basic HTML structure: <span class="highlight">&lt;html&gt;</span>, <span class="highlight">&lt;head&gt;</span>, <span class="highlight">&lt;body&gt;</span>.</li>
+        <li>Learning headings <span class="highlight">&lt;h1&gt;</span> to <span class="highlight">&lt;h6&gt;</span>.</li>
+        <li>Paragraphs <span class="highlight">&lt;p&gt;</span>, line breaks <span class="highlight">&lt;br&gt;</span>, and text formatting tags.</li>
+        <li>Lists: ordered <span class="highlight">&lt;ol&gt;</span> and unordered <span class="highlight">&lt;ul&gt;</span>.</li>
+        <li>Adding comments <span class="highlight">&lt;!-- comment --&gt;</span> for code readability.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-row">
+    <div class="card-img"><img src="/img/wd2.png" alt="HTML Tags & Attributes"></div>
+    <div class="card-text">
+      <h2>Day 2: HTML Tags & Attributes</h2>
+      <ul>
+        <li>Hyperlinks using <span class="highlight">&lt;a&gt;</span> and <span class="highlight">href</span>.</li>
+        <li>Images <span class="highlight">&lt;img&gt;</span> with <span class="highlight">src</span> and <span class="highlight">alt</span>.</li>
+        <li>Tables using <span class="highlight">&lt;table&gt;</span>, <span class="highlight">&lt;tr&gt;</span>, <span class="highlight">&lt;td&gt;</span>.</li>
+        <li>Forms: <span class="highlight">&lt;form&gt;</span>, <span class="highlight">&lt;input&gt;</span>, <span class="highlight">&lt;button&gt;</span>.</li>
+        <li>Using <span class="highlight">id</span> and <span class="highlight">class</span> for styling.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-row">
+    <div class="card-img"><img src="/img/wdcss (2).png" alt="CSS Basics"></div>
+    <div class="card-text">
+      <h2>Day 3: CSS Basics</h2>
+      <ul>
+        <li>Ways to include CSS: inline, internal, external.</li>
+        <li>Selectors: element, class <span class="highlight">.</span>, id <span class="highlight">#</span>.</li>
+        <li>Properties: <span class="highlight">color</span>, <span class="highlight">background-color</span>, <span class="highlight">font-size</span>.</li>
+        <li>Margin, padding, borders, and box model basics.</li>
+        <li>Styling headings, paragraphs, and buttons.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day-row">
+    <div class="card-img"><img src="/img/day5.png" alt="Advanced CSS"></div>
+    <div class="card-text">
+      <h2>Day 4: Advanced CSS</h2>
+      <ul>
+        <li>Box model in depth: content, padding, border, margin.</li>
+        <li>Flexbox layout for horizontal and vertical alignment.</li>
+        <li>Hover effects and transitions.</li>
+        <li>Gradients, shadows, and border-radius for modern design.</li>
+        <li>Combining multiple CSS properties for cards and sections.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="day-row">
+    <div class="card-img"><img src="/img/wdcss (1).png" alt="Responsive Design"></div>
+    <div class="card-text">
+      <h2>Day 5: Responsive Design</h2>
+      <ul>
+        <li>Importance of responsive design.</li>
+        <li>Media queries for mobile, tablet, desktop layouts.</li>
+        <li>Relative units: %, em, rem.</li>
+        <li>Responsive navigation and content sections.</li>
+        <li>Testing on different screen sizes.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day-row">
+    <div class="card-img"><img src="/img/wdcss (2).png" alt="JavaScript Basics"></div>
+    <div class="card-text">
+      <h2>Day 6: JavaScript Basics</h2>
+      <ul>
+        <li>Variables: <span class="highlight">let</span>, <span class="highlight">const</span>, <span class="highlight">var</span>.</li>
+        <li>Data types: string, number, boolean, array, object.</li>
+        <li>Operators: arithmetic, comparison, logical.</li>
+        <li>Functions: defining and calling simple functions.</li>
+        <li>DOM manipulation basics: <span class="highlight">document.getElementById()</span>, <span class="highlight">querySelector()</span>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day-row">
+    <div class="card-img"><img src="/img/pf.png" alt="JavaScript Events & Loops"></div>
+    <div class="card-text">
+      <h2>Day 7 – Portfolio & GitHub Integration</h2>
+  <p><strong>Objective:</strong> Showcase all projects, integrate GitHub repositories, and finalize portfolio presentation.</p>
+
+  <ul>
+    <li>Structuring the portfolio with sections: About Me, Skills, Projects, Contact.</li>
+    <li>Uploading projects to <strong>GitHub</strong> with proper commit messages and README files.</li>
+    <li>Embedding GitHub project links in the portfolio with screenshots, descriptions, and live demo links.</li>
+    <li>Ensuring portfolio responsiveness across devices and validating HTML/CSS for best practices.</li>
+    <li>Adding personal information, social links, and contact form integration.</li>
+  </ul>
+    </div>
+  </div>
+
+</div>
+<!-- Mentor -->
+    <!-- Mentor Section -->
+<div class="mentor-section">
+    <h2>Mentors</h2>
+    <div class="mentor-list">
+        <div class="mentor-card">Amruta Koparkar </div>
+        <div class="mentor-card">Prajwal Dohare</div>
+        <div class="mentor-card">Devyanshi Ingole </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer>
+  &copy; 2025 MyPortfolio. All rights reserved. | Follow me on 
+  <a href="#">Instagram</a>, 
+  <a href="#">LinkedIn</a>, 
+  <a href="#">GitHub</a>
+</footer>
+
+<script>
+  // Persistent dark/light mode
+  document.addEventListener('DOMContentLoaded', () => {
+    if(localStorage.getItem('mode') === 'day'){
+      document.body.classList.add('day-mode');
+    }
+  });
+
+  function toggleMode() {
+    document.body.classList.toggle('day-mode');
+    if(document.body.classList.contains('day-mode')){
+      localStorage.setItem('mode', 'day');
+    } else {
+      localStorage.setItem('mode', 'night');
+    }
+  }
+
+  function goHome() {
+    window.location.href = 'index.html'; // replace with your homepage URL
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

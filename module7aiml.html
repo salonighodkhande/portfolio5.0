@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI/ML Module Documentation</title>
+<style>
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+    color: #E0E0E0;
+    transition: background 0.5s, color 0.5s;
+}
+body.day-mode { background: #fff; color: #111; }
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1C1C1C;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+body.day-mode header { background: #f5f5f5; color: #111; }
+header .logo { font-size: 1.5em; font-weight: 700; color: #FF8CFF; }
+header nav a, header nav button {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1em;
+}
+body.day-mode header nav a, body.day-mode header nav button { color: #111; }
+header nav a:hover, header nav button:hover { color: #FF91C9; }
+
+/* Main */
+h1 { text-align: center; font-size: 2.8em; margin: 40px 0 20px; color: #FF8CFF; }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.card {
+    background: #1C1C1C;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, #6EC1FF, #A87CFF, #FF91C9) 1;
+    transition: background 0.5s, color 0.5s, transform 0.3s;
+}
+body.day-mode .card { background: #fff; color: #111; }
+.card:hover { transform: translateY(-5px); }
+.card img { width: 100%; border-radius: 12px; margin-bottom: 15px; height: 200px; object-fit: cover; background: #333; display: block; text-align: center; color: #fff; font-size: 1em; line-height: 200px; }
+.card h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #6EC1FF, #A87CFF, #FF91C9);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.card p { margin-bottom: 10px; line-height: 1.6; }
+.card ul { padding-left: 20px; }
+.card li { padding: 5px 0; line-height: 1.6; }
+
+/* Mentor Section */
+.mentor-section {
+    background: #1C1C1C;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+body.day-mode .mentor-section { background: #fff; color: #111; }
+.mentor-section h2 { color: #FF8CFF; margin-bottom: 15px; }
+.mentor-list { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+.mentor-card {
+    background: #2C2C2C;
+    padding: 15px 20px;
+    border-radius: 10px;
+    min-width: 180px;
+}
+body.day-mode .mentor-card { background: #f0f0f0; color: #111; }
+
+/* Footer */
+footer {
+    background: #1C1C1C;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+body.day-mode footer { background: #f5f5f5; color: #111; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    .card h2 { font-size: 1.5em; }
+}
+@media (max-width: 480px) {
+    header { flex-direction: column; gap: 10px; }
+    header nav a, header nav button { margin-left: 0; }
+    .mentor-list { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Module 7 - AI/ML </div>
+    <nav>
+         <a href="index.html" >Home</a>
+    <button class="plain-button" onclick="toggleMode()">Dark/Light</button>
+    </nav>
+</header>
+
+<main class="container">
+
+<!-- Day 1 -->
+<div class="card">
+    <h2>Day 1 – Introduction to AI & ML</h2>
+    <img src="/img/aimlintro.jpg" alt="Day 1 placeholder"> <!-- placeholder -->
+    <p>We started the AI & ML module by understanding the fundamental concepts, including definitions, history, and importance of Artificial Intelligence and Machine Learning in modern technology. Topics included supervised vs unsupervised learning, real-world applications, and a brief overview of Python as the primary language for ML.</p>
+    <ul>
+        <li>Understanding AI & ML concepts</li>
+        <li>History and evolution of AI</li>
+        <li>Applications in healthcare, finance, and robotics</li>
+        <li>Introduction to Python for ML</li>
+    </ul>
+</div>
+
+<!-- Day 2 -->
+<div class="card">
+    <h2>Day 2 – Fundamentals of Python</h2>
+   
+    <p>We focused on Python fundamentals crucial for AI & ML, covering variables, data types, conditional statements, loops, functions, and object-oriented programming basics. We practiced writing small programs to understand Python syntax, and emphasized code readability and debugging techniques.</p>
+    <ul>
+        <li>Variables, data types, and operators</li>
+        <li>Conditional statements and loops</li>
+        <li>Functions and modular programming</li>
+        <li>Introduction to object-oriented programming</li>
+        <li>Debugging and code best practices</li>
+    </ul>
+</div>
+
+<!-- Day 3 -->
+<div class="card">
+    <h2>Day 3 – Python Libraries: NumPy Part 1</h2>
+    <img src="/img/aiml libraries (2).png" alt="Day 3 placeholder">
+    <p>We started exploring NumPy, a library for numerical computing in Python. Topics included arrays, array operations, indexing, slicing, and basic mathematical functions. Hands-on practice included creating arrays, performing arithmetic operations, and understanding matrix manipulations.</p>
+    <ul>
+        <li>Introduction to NumPy</li>
+        <li>Creating 1D and 2D arrays</li>
+        <li>Array indexing and slicing</li>
+        <li>Mathematical operations on arrays</li>
+        <li>Matrix manipulations and shapes</li>
+    </ul>
+</div>
+
+<!-- Day 4 -->
+<div class="card">
+    <h2>Day 4 – NumPy Part 2 & Matplotlib Introduction</h2>
+    <img src="/img/aiml libraries (3).png" alt="Day 4 placeholder">
+    <p>We continued with NumPy focusing on advanced operations like broadcasting, aggregation, and vectorization. We also started Matplotlib, learning basic plotting functions, line plots, and customizing axes, labels, and titles for data visualization.</p>
+    <ul>
+        <li>Broadcasting and vectorized operations</li>
+        <li>Aggregations: sum, mean, min, max</li>
+        <li>Introduction to Matplotlib</li>
+        <li>Line plots, axis customization, and titles</li>
+        <li>Creating multiple plots and legends</li>
+    </ul>
+</div>
+
+<!-- Day 5 -->
+<div class="card">
+    <h2>Day 5 – Matplotlib & Seaborn Introduction</h2>
+    <img src="/img/aiml libraries (1).png" alt="Day 5 placeholder">
+    <p>We continued learning Matplotlib with bar charts, scatter plots, histograms, and customization techniques. Later, we started Seaborn to create more aesthetically appealing statistical plots, including distribution plots, box plots, and pair plots.</p>
+    <ul>
+        <li>Bar charts, histograms, scatter plots</li>
+        <li>Plot customization: colors, labels, grid</li>
+        <li>Introduction to Seaborn library</li>
+        <li>Distribution plots, box plots, and pair plots</li>
+        <li>Understanding visualization best practices</li>
+    </ul>
+</div>
+
+<!-- Day 6 -->
+<div class="card">
+    <h2>Day 6 – Seaborn Continued</h2>
+    
+    <p>We focused on Seaborn advanced plots like heatmaps, regression plots, and categorical plots. Learned how to combine Matplotlib and Seaborn for powerful visualizations and started working on mini-projects using sample datasets.</p>
+    <ul>
+        <li>Advanced Seaborn plots: heatmaps, regression plots</li>
+        <li>Categorical plots: countplot, boxplot, violinplot</li>
+        <li>Combining Matplotlib & Seaborn</li>
+        <li>Mini-projects with real datasets</li>
+    </ul>
+</div>
+
+<!-- Day 7 -->
+<div class="card">
+    <h2>Day 7 – Seaborn Projects & Recap</h2>
+
+    <p>We continued with Seaborn for advanced data visualization projects. The session included consolidating all Python skills, creating final plots for datasets, interpreting insights, and preparing for presentations.</p>
+    <ul>
+        <li>Advanced visualizations with Seaborn</li>
+        <li>Project work with real datasets</li>
+        <li>Analyzing insights from plots</li>
+        <li>Final recap of Python, NumPy, Matplotlib, Seaborn</li>
+    </ul>
+</div>
+
+<!-- Mentor Section -->
+<div class="mentor-section">
+    <h2>Mentors</h2>
+    <div class="mentor-list">
+        <div class="mentor-card">Prathmesh Ingale</div>
+        <div class="mentor-card">Hriday Amle</div>
+        <div class="mentor-card">Shrideep Dhore</div>
+    </div>
+</div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Your Name. All rights reserved. Portfolio Project.</p>
+</footer>
+
+<script>
+// Dark/Light Mode Toggle
+function toggleMode() {
+    document.body.classList.toggle("day-mode");
+    let currentMode = document.body.classList.contains("day-mode") ? "light" : "dark";
+    localStorage.setItem("theme", currentMode);
+}
+
+// Apply saved theme on page load
+window.addEventListener("load", () => {
+    let savedMode = localStorage.getItem("theme");
+    if(savedMode === "light") {
+        document.body.classList.add("day-mode");
+    } else {
+        document.body.classList.remove("day-mode");
+    }
+});
+
+// Home button function
+function goHome() {
+    window.location.href = "index.html"; // Replace with your homepage
+}
+</script>
+
+</body>
+</html>
+
+
+

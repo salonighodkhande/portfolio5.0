@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAD Module Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #000000;
+    color: #E0E0E0;
+    transition: background 0.5s, color 0.5s;
+  }
+  body.day-mode {
+    background: #FFFFFF;
+    color: #111111;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1C1C1C;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  body.day-mode header { background: #f5f5f5; color: #111; }
+  header .logo { font-size: 1.5em; font-weight: 700; color: #FF8CFF; }
+  header nav a {
+    margin-left: 20px; text-decoration: none; font-weight: 600; color: #fff; transition: color 0.3s;
+  }
+  body.day-mode header nav a { color: #111; }
+  header nav a:hover { color: #FF91C9; }
+
+  /* Title & buttons */
+  h1 { text-align: center; font-size: 3em; font-weight: 700; margin-top: 40px; margin-bottom: 20px; color: #FF8CFF; }
+  .button-group { text-align: center; margin-bottom: 30px; }
+  .mode-toggle, .home-button {
+    display: inline-block; margin: 10px; padding: 10px 25px; font-weight: 700; border: none; border-radius: 25px; cursor: pointer; transition: all 0.3s; text-decoration: none; color: #fff;
+  }
+  .mode-toggle { background: linear-gradient(90deg, #6EC1FF,#A87CFF,#FF91C9); }
+  .mode-toggle:hover { filter: brightness(1.1); }
+  .home-button { background: linear-gradient(90deg, #FF8CFF,#A87CFF,#6EC1FF); }
+  .home-button:hover { filter: brightness(1.1); }
+
+  .plain-button {
+  background: none;       /* No background */
+  border: none;           /* No border */
+  color: inherit;         /* Inherit text color */
+  font-weight: 600;       /* Optional: slightly bold */
+  cursor: pointer;        /* Pointer cursor */
+  text-decoration: none;  /* Remove underline for <a> */
+  padding: 0;             /* No padding */
+  font-size: 1rem;        /* Default font size */
+  transition: color 0.3s; /* Smooth color change */
+}
+
+.plain-button:hover {
+  color: #FF91C9; /* Pink on hover */
+}
+
+  /* Timeline */
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .timeline { position: relative; padding-left: 50px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #6EC1FF, #A87CFF, #FF91C9);
+    border-radius: 2px;
+  }
+  .timeline-item { margin-bottom: 40px; position: relative; opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+  .timeline-item.show { opacity: 1; transform: translateY(0); }
+  .timeline-icon {
+    position: absolute; left: -7px; width: 30px; height: 30px; border-radius: 50%; background: #7E57C2; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1em;
+  }
+  .timeline-content {
+    padding: 10px 20px; background: #1C1C1C; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); color: #E0E0E0;
+  }
+  body.day-mode .timeline-content { background: #FFFFFF; color: #111111; }
+  .timeline-content img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
+  .timeline-content h2 { margin-top: 0; color: #A87CFF; }
+  .timeline-content ul { padding-left: 20px; margin: 0; }
+  .timeline-content li { padding: 6px 0; line-height: 1.6; }
+  .highlight { color: #FF91C9; font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .timeline { padding-left: 30px; }
+    .timeline-icon { left: -10px; }
+  }
+
+  /* Footer */
+  footer { background: #1C1C1C; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+  body.day-mode footer { background: #f5f5f5; color: #111; }
+  footer a { color: #FF91C9; text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+
+
+ 
+
+
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo"><h2>Module 2 - Computer Aided Designing</h2></div>
+   <nav>
+    <a href="index.html" >Home</a>
+    <button class="plain-button" onclick="toggleMode()">Dark/Light</button>
+
+  </nav>
+  </div>
+  </nav>
+</header>
+
+<!-- Main Content -->
+
+  
+  
+
+
+<div class="container">
+  <div class="timeline">
+
+    <!-- Day 1-->
+    <div class="timeline-item">
+      
+      <div class="timeline-content">
+        <img src="/img/cadd1.png" alt="Introduction to CAD">
+        <h2>Day 1: Introduction to CAD/Basic Modeling</h2>
+        <ul>
+          <li>What is <span class="highlight">CAD</span> and its importance in engineering and design.</li>
+          <li>Types of CAD: 2D CAD, 3D CAD.</li>
+          <li>Popular CAD software: <span class="highlight">AutoCAD</span>, <span class="highlight">SolidWorks</span>, <span class="highlight">Fusion 360</span>.</li>
+          <li>Understanding the CAD workspace: menus, toolbars, drawing area.</li>
+          <li>Basic drawing commands: <span class="highlight">Line</span>, <span class="highlight">Circle</span>, <span class="highlight">Rectangle</span>, <span class="highlight">Arc</span>.</li>
+        </ul>
+      </div>
+    </div>
+
+   <!-- Day 2 -->
+    <div class="timeline-item">
+      
+      <div class="timeline-content">
+        <img src="/img/cad-d2.png" alt="Sketching and Basic Features">
+        <h2>Day 2: Sketching and Basic Features</h2>
+        <ul>
+          <li>Creating and managing sketches.</li>
+          <li>Using constraints to define sketch geometry.</li>
+          <li>Basic features: Extrude, Revolve, Sweep, Loft.</li>
+          <li>Modifying features: Fillet, Chamfer, Shell.</li>
+          <li>Understanding the feature tree/history.</li>
+        </ul>
+      </div>
+
+   <!-- Day 3 -->
+     <div class="timeline-item">
+    
+      <div class="timeline-content">
+        <img src="/img/spiner.png" alt="Dimensions & Annotations">
+        <h2>Day 3: Dimensions & Annotations</h2>
+        <ul>
+          <li>Adding dimensions: <span class="highlight">linear</span>, <span class="highlight">angular</span>, <span class="highlight">radius</span>.</li>
+          <li>Using <span class="highlight">text annotations</span> to label parts.</li>
+          <li>Leaders and hatching for clarity.</li>
+          <li>Maintaining drawing standards: units, scale.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="timeline-item">
+   
+      <div class="timeline-content">
+        <img src="/img/pikachu.jpg" alt="Advanced 2D CAD">
+        <h2>Day 4: Advanced 2D CAD Techniques</h2>
+        <ul>
+          <li>Polylines, splines, and complex curves.</li>
+          <li>Trim, extend, offset, fillet, chamfer commands.</li>
+          <li>Creating <span class="highlight">blocks</span> for reusable components.</li>
+          <li>Working with layouts and paper space.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="timeline-item">
+   
+      <div class="timeline-content">
+       
+        <h2>Day 5: Introduction to 3D CAD</h2>
+        <ul>
+          <li>Difference between 2D and 3D CAD.</li>
+          <li>3D workspace, views, and navigation.</li>
+          <li>Basic 3D objects: <span class="highlight">Extrude</span>, <span class="highlight">Revolve</span>, <span class="highlight">Loft</span>, <span class="highlight">Sweep</span>.</li>
+          <li>Understanding coordinates, axes, and planes in 3D.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="timeline-item">
+  
+      <div class="timeline-content">
+        <img src="/img/worm-wheel-cad.png" alt="Introduction to 3D CAD">
+        <h2>Day 6: 3D Modeling Techniques</h2>
+        <ul>
+          <li>Modifying 3D models: <span class="highlight">Move</span>, <span class="highlight">Rotate</span>, <span class="highlight">Scale</span>.</li>
+          <li>Combining 3D objects: <span class="highlight">Union</span>, <span class="highlight">Subtract</span>, <span class="highlight">Intersect</span>.</li>
+          <li>Using <span class="highlight">Fillet</span> and <span class="highlight">Chamfer</span> in 3D.</li>
+          <li>Introduction to assemblies: assembling multiple components.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="timeline-item">
+ 
+      <div class="timeline-content">
+        <video controls width="100%" style="border-radius:10px; margin-top:10px;">
+    <source src="/img/womb gear.mp4" type="video/mp4">
+  </video>
+        <h2>Day 7: Rendering & Output</h2>
+        <ul>
+          <li>Applying materials, colors, and textures.</li>
+          <li>Creating realistic renders and views.</li>
+          <li>Generating technical drawings from 3D models.</li>
+          <li>Exporting for manufacturing, 3D printing, or documentation.</li>
+          <li>Tips for professional CAD documentation and presentation.</li>
+        </ul>
+      </div>
+    </div>
+
+  
+
+   
+
+  </div>
+</div>
+
+<!-- Mentor -->
+    <!-- Mentor Section -->
+<div class="mentor-section">
+    <h2>Mentors</h2>
+    <div class="mentor-list">
+        <div class="mentor-card">Swayam Dhamode</div>
+        
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 MyPortfolio. All rights reserved. | Follow me on 
+  <a href="#">Instagram</a>, 
+  <a href="#">LinkedIn</a>, 
+  <a href="#">GitHub</a>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Persistent dark/light mode
+  document.addEventListener('DOMContentLoaded', () => {
+    if(localStorage.getItem('mode') === 'day'){
+      document.body.classList.add('day-mode');
+    }
+
+    // Scroll animations for timeline
+    const items = document.querySelectorAll('.timeline-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+    items.forEach(item => observer.observe(item));
+  });
+
+  function toggleMode() {
+    document.body.classList.toggle('day-mode');
+    if(document.body.classList.contains('day-mode')){
+      localStorage.setItem('mode', 'day');
+    } else {
+      localStorage.setItem('mode', 'night');
+    }
+  }
+</script>
+
+</body>
+</html>
+
